@@ -5,12 +5,12 @@ export const videoMachine = createMachine({
    initial: 'closed', //начальный стейт
    states: {
       closed: {
-         on:{ OPEN: 'Open' } //переход в состояние open
+         on:{ OPEN: 'open' } //переход в состояние open
       },
       open: {
          on: { CLOSE: 'closed', MINIMIZE: 'minimized' } //закрытие / минимизация
       },
-      mimeized: {
+      minimized: {
          on: {EXPAND: 'open', CLOSE: 'closed'} //развернуть / закрыть
       }
    }
